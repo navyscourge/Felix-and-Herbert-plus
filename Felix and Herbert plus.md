@@ -1,60 +1,51 @@
 ---
-title: Felix and Herbert
+title: Felix and Herbert (Scratch 2)
 level: Level 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"
-materials: ["Felix-and-Herbert.sb2"]
 ...
 
 # Introduction { .intro }
 
-We are going to make a game of catch with __Felix the cat__ and __Herbert__ the mouse. You control Herbert with the mouse and try to avoid getting caught by Felix. The longer you avoid him the more points you score, but don’t get caught because your score will go down!
+We are going to make a game where you control a mouse (Herbert) and a cat (Felix) chases you. If you avoid being caught your score goes up, but get caught and your score goes down. We are going to tell the computer what to do to make the game work.
 
-![screenshot](felixherbert_screenshot.png)
+If your are being tutor led, please wait to be told to move to the next step.
 
-# Step 1: Felix follows the mouse pointer { .activity }
+![screenshot](felix_herbert_result.png)
+
+# Step 1: Prepare Felix (the cat) { .activity }
 
 ## Activity Checklist { .check }
 
 + Start a new project.
-+ Click on the **stage backdrop** next to the sprite and switch to the `Backdrops` tab, and then click the `Choose Backdrop from library` button and choose the backdrop indoors/hall. Delete the original blank backdrop by right clicking on the blank stage backdrop and choose Delete.
-+ Click on the sprite Sprite1 in the Sprite Summary Area, and then click on the `i` button to the top left of the Sprite1 in Sprite Summary area. Change the name of the sprite to **Felix**.
-+ Make sure Felix only points left-right by clicking this button in the rotation-style option for Felix: <img alt="" class="inline" src="flip_arrows.png">
-+ Create this script on the scripts tab for Felix sprite:
-```blocks
-    when FLAG clicked
-    forever
-        point towards [mouse-pointer v]
-        move (10) steps
-        next costume
-        play drum (3 v) for (0.3) beats
-    end
-```
++ Click on the sprite Sprite1 in the Sprite Summary Area, and then click on the `i` button to the top left of the Sprite1. Change the name of the sprite to **Felix**.
++ Make sure Felix only points left-right by clicking the arrows button as the rotation-style for Felix <img alt="" class="inline" src="sprite_properties2.png">
++ Shrink Felix by clicking the `Shrink sprite` button and clicking on Felix until he is the right size.
++ Click and hold on Felix, and drag him to the centre of the stage area.
 
-## Test your project { .flag }
-
-Click the green flag.
-
-+ Does Felix follow the mouse pointer?
-+ Does it look like he’s walking when he moves?
-+ Does he move at the right speed?
-
-## Save your project { .save }
-
-
-# Step 2: Felix chases Herbert { .activity }
-
-Next, we want Felix to chase Herbert the mouse, rather than the mouse pointer.
+# Step 2: Prepare the stage { .activity }
 
 ## Activity Checklist { .check }
 
-+ Create another sprite using the `choose sprite from library` { .blockgrey } button and selecting **animals/mouse1**.
-+ Click on the sprite Mouse1 in the Sprite Summary Area, and then click on the `i` button to the top left of the Mouse1 in Sprite Summary area. Change the name of the sprite to **Herbert**.
-+ Make sure Herbert only points left-right by clicking this button in the Rotation-style option for Herbert: <img alt="" class="inline" src="flip_arrows.png">
-+ Switch to the __Costumes__ tab, then click on the image of the mouse in the Paint Editor area. A box will appear around the costume. Click and Drag a corner of the box to make Herbert smaller than Felix.
++ Click on **stage backdrop** and switch to the `Backdrops` tab, and then click the `Choose Backdrop from library` button and choose the backdrop indoors/hall.
++ Delete the original blank backdrop by clicking the 'X' button next to it.
 
-+ **Give Herbert this script:**
+# Step 3: Prepare Herbert (the mouse) { .activity }
+
+## Activity Checklist { .check }
+
++ Get a new sprite using the Giga button in the Sprite Summary Area, and choose the mouse from the Animals library.
++ Click on the `i` button to the top left of the new sprite. Change the name of the sprite to **Herbert**.
++ Make sure Herbert only points left-right by clicking the arrows button as the rotation-style for Herbert.
++ Shrink Herbert by clicking the `Shrink sprite` button and clicking on Herbert until he is the right size.
++ Click and hold on Herbert, and drag him to the side of Felix.
+
+# Step 4: Make Herbert move { .activity }
+
+## Activity Checklist { .check }
+
++ Create this script on the scripts tab for Herbert:
 ```blocks
     when FLAG clicked
     forever
@@ -65,12 +56,58 @@ Next, we want Felix to chase Herbert the mouse, rather than the mouse pointer.
 
 ## Test your project { .flag }
 
-Click the green flag.
+Set the stage to full screen. Click the green flag.
++ Does Herbert follow the mouse pointer?
++ Does Herbert always point towards Felix?
 
-+ Does Herbert move with the mouse pointer?
-+ Does Felix chase Herbert?
+Extra questions:
++ What happens if you use a different setting as the rotation-style for Herbert?
++ Move the `forever` block away from the `When (green flag) clicked` block. Does Herbert follow the mouse pointer?
++ How easy is it to move Herbert round Felix? What if Felix is bigger? What if Felix is smaller?
 
 ## Save your project { .save }
+
+# Step 5: Make Felix move { .activity }
+
+## Activity Checklist { .check }
+
++ Create this script on the scripts tab for Felix:
+```blocks
+    when FLAG clicked
+    forever
+        point towards [mouse-pointer v]
+        move (4) steps
+    end
+```
+# Step 6: Make Felix run { .activity }
+
+## Activity Checklist { .check }
+
++ Get a new costume using the Giga button in the Sprite Summary Area, and choose the other cat from the Animals library.
++ Add a `next costume` block to the script:
+```blocks
+    when FLAG clicked
+    forever
+        point towards [mouse-pointer v]
+        move (4) steps
+        next costume
+    end
+```
+## Test your project { .flag }
+
+Set the stage to full screen. Click the green flag.
++ Does Felix move towards Herbert?
++ If you keep moving Herbert, does Felix keep following?
++ Does it look like Felix is walking / running?
+
+Extra questions:
++ What happens if the `move (4) steps` is changed to `move (8) steps`? What about `move (2) steps`?
++ Can you make Herbert avoid Felix for a long time?
+
+## Save your project { .save }
+
+
+##############################################
 
 # Step 3: Felix says when he’s caught Herbert { .activity }
 
